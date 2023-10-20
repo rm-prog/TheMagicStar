@@ -5,8 +5,19 @@ public class Main {
 
         int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
 
-        int[][] combinations = FindCombinations(numbers, 26);
+//        long start = System.currentTimeMillis();
+//        int[][] combinations = FindCombinations(numbers, 26);
+//        long end = System.currentTimeMillis();
+//
+//        System.out.println(end - start);
+//        System.out.println(Arrays.deepToString(combinations));
+//        System.out.println(combinations.length);
 
+        long start = System.currentTimeMillis();
+        int[][] combinations = Combinations.FindCombinations(new int[]{}, numbers, new int[][]{});
+        long end = System.currentTimeMillis();
+
+        System.out.println(end - start);
         System.out.println(Arrays.deepToString(combinations));
         System.out.println(combinations.length);
 
@@ -28,12 +39,7 @@ public class Main {
         for (int i = 0; i < numbers.length; i++) {
 
             // find all combination with the number numbers[i] in it
-
-            int[] numbersSubArray = new int[numbers.length - 1];
-
-            System.arraycopy(numbers, i + 1, numbersSubArray, 0, numbers.length - i - 1);
-
-
+            if (sum < numbers[i]) break;
             if (sum == numbers[i]) {
                 // we just found a combination, whose last number is number[i]
                 int[][] newArray = new int[combinations.length + 1][];
@@ -42,11 +48,17 @@ public class Main {
 
                 combinations = newArray;
             }
-            // is another combination possible or not
-            else if (numbersSubArray.length > 0 && sum - numbers[i] >= numbersSubArray[0]) {
+            // is another combination with numbers[i] possible or not
+            else if (i < numbers.length - 1 && sum - numbers[i] >= numbers[i + 1]) {
 
+                // produce all possible subCombinations of numbers with index bigger than i
+                // that sum up to sum - numbers[i]
+                int[] numbersSubArray = new int[numbers.length - 1];
+                System.arraycopy(numbers, i + 1, numbersSubArray, 0, numbers.length - i - 1);
                 int[][] subCombinations = FindCombinations(numbersSubArray, sum - numbers[i]);
 
+                // insert at the beginning of every subCombination numbers[i]
+                // and add the new combinations to the combinations array
                 for (int[] subCombination : subCombinations) {
                     int[][] newArray = new int[combinations.length + 1][];
                     System.arraycopy(combinations, 0, newArray, 0, combinations.length);
