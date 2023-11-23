@@ -5,14 +5,6 @@ public class Main {
 
         int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
 
-//        long start = System.currentTimeMillis();
-//        int[][] combinations = FindCombinations(numbers, 26);
-//        long end = System.currentTimeMillis();
-//
-//        System.out.println(end - start);
-//        System.out.println(Arrays.deepToString(combinations));
-//        System.out.println(combinations.length);
-
         long start = System.currentTimeMillis();
         int[][] combinations = Combinations.FindCombinations(new int[]{}, numbers, new int[][]{});
         long end = System.currentTimeMillis();
@@ -21,10 +13,21 @@ public class Main {
         System.out.println(Arrays.deepToString(combinations));
         System.out.println(combinations.length);
 
+        int[][] combinationsOfSum26 = Combinations.CombinationsOfSum(combinations, 26);
+        int[][] combinationsOfLength4 = Combinations.CombinationsOfLength(combinationsOfSum26, 4);
+        int[][] combinationsOfLength6 = Combinations.CombinationsOfLength(combinationsOfSum26, 6);
+
+        System.out.println(Arrays.deepToString(combinationsOfSum26));
+        System.out.println(combinationsOfSum26.length);
+        System.out.println(Arrays.deepToString(combinationsOfLength4));
+        System.out.println(combinationsOfLength4.length);
+        System.out.println(Arrays.deepToString(combinationsOfLength6));
+        System.out.println(combinationsOfLength6.length);
+
     }
 
     // find the combinations of the numbers in numbers, which sum up to sum (each number can only come once in a combination)
-    static int[][] FindCombinations(int[] numbers, int sum) {
+    static int[][] BadAlgorithmFindCombinations(int[] numbers, int sum) {
 
         if (numbers.length == 2) {
             if (numbers[0] == sum) return new int[][]{{numbers[0]}};
@@ -55,7 +58,7 @@ public class Main {
                 // that sum up to sum - numbers[i]
                 int[] numbersSubArray = new int[numbers.length - 1];
                 System.arraycopy(numbers, i + 1, numbersSubArray, 0, numbers.length - i - 1);
-                int[][] subCombinations = FindCombinations(numbersSubArray, sum - numbers[i]);
+                int[][] subCombinations = BadAlgorithmFindCombinations(numbersSubArray, sum - numbers[i]);
 
                 // insert at the beginning of every subCombination numbers[i]
                 // and add the new combinations to the combinations array

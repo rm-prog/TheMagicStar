@@ -31,7 +31,48 @@ public class Combinations {
 
         return results;
 
+    }
+
+    public static int[][] CombinationsOfLength(int[][] combinations, int length) {
+
+        int[][] results = new int[][]{};
+
+        for (int[] combination : combinations) {
+            if (combination.length == length) {
+                int[][] newArray = new int[results.length + 1][];
+                System.arraycopy(results, 0, newArray, 0, results.length);
+                newArray[newArray.length - 1] = combination;
+                results = newArray;
+            }
+        }
+
+        return results;
 
     }
+
+    public static int[][] CombinationsOfSum(int[][] combinations, int sum) {
+
+        int[][] results = new int[][]{};
+
+        for (int[] combination : combinations) {
+
+            int sumOfCombination = 0;
+            for (int number : combination) {
+                sumOfCombination += number;
+            }
+
+            if (sumOfCombination == sum) {
+                int[][] newArray = new int[results.length + 1][];
+                System.arraycopy(results, 0, newArray, 0, results.length);
+                newArray[newArray.length - 1] = combination;
+                results = newArray;
+            }
+
+        }
+
+        return results;
+
+    }
+
 
 }

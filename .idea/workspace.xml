@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27492a22-f6cd-451c-8d72-b213cc9dcc11" name="Changes" comment="combinations of numbers that sum up to the same number">
-      <change afterPath="$PROJECT_DIR$/src/Combinations.java" afterDir="false" />
+    <list default="true" id="27492a22-f6cd-451c-8d72-b213cc9dcc11" name="Changes" comment="Added Methods, that find combinations of certain lengths and that add up to a certain sum.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Combinations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Combinations.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,14 +33,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/Uzytkownik/Documents/Studium/EP1/TheMagicStar",
-    "settings.editor.selected.configurable": "actions.on.save"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Uzytkownik/Documents/Studium/EP1/TheMagicStar&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;actions.on.save&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -64,7 +64,14 @@
       <option name="project" value="LOCAL" />
       <updated>1696187701716</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="method that produces all combinations of an array of numbers with no repetitions">
+      <created>1697801552552</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1697801552552</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -81,16 +88,13 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
     <MESSAGE value="combinations of numbers that sum up to the same number" />
-    <option name="LAST_COMMIT_MESSAGE" value="combinations of numbers that sum up to the same number" />
+    <MESSAGE value="method that produces all combinations of an array of numbers with no repetitions" />
+    <MESSAGE value="Added Methods, that find combinations of certain lengths and that add up to a certain sum." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Methods, that find combinations of certain lengths and that add up to a certain sum." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Combinations.java</url>
           <line>4</line>
