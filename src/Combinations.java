@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.Dictionary;
+
 public class Combinations {
 
     public static int[][] FindCombinations(int[] active, int[] rest, int[][] results) {
@@ -74,5 +77,24 @@ public class Combinations {
 
     }
 
+    public static int[][] CombinationsThatContain(int[][] combinations, int[] numbers, int amount) {
+
+        int[][] result = new int[][]{};
+
+        for (int[] combination : combinations) {
+            int numbersContained = 0;
+            for (int number : numbers) {
+                if (Arrays.binarySearch(combination, number) >= 0) numbersContained++;
+            }
+            if (numbersContained == amount) {
+                int[][] newArray = new int[result.length + 1][];
+                System.arraycopy(result, 0, newArray, 0, result.length);
+                newArray[newArray.length - 1] = combination;
+                result = newArray;
+            }
+        }
+
+        return result;
+    }
 
 }

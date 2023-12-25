@@ -1,4 +1,6 @@
 import java.util.Arrays;
+import java.util.Dictionary;
+import java.util.Hashtable;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,6 +18,7 @@ public class Main {
         int[][] combinationsOfSum26 = Combinations.CombinationsOfSum(combinations, 26);
         int[][] combinationsOfLength4 = Combinations.CombinationsOfLength(combinationsOfSum26, 4);
         int[][] combinationsOfLength6 = Combinations.CombinationsOfLength(combinationsOfSum26, 6);
+        int[][] combinations2 = Combinations.CombinationsThatContain(combinationsOfLength4, new int[]{1, 2, 3, 4, 5, 11}, 2);
 
         System.out.println(Arrays.deepToString(combinationsOfSum26));
         System.out.println(combinationsOfSum26.length);
@@ -23,6 +26,8 @@ public class Main {
         System.out.println(combinationsOfLength4.length);
         System.out.println(Arrays.deepToString(combinationsOfLength6));
         System.out.println(combinationsOfLength6.length);
+        System.out.println(Arrays.deepToString(combinations2));
+        System.out.println(combinations2.length);
 
     }
 
